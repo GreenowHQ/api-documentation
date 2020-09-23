@@ -13,9 +13,9 @@
     }
   ],
   "paths": {
-    "/user": {
+    "/offset": {
       "get": {
-        "summary": "Details about a user",
+        "summary": "Details about co2 ",
         "operationId": "listUser",
         "tags": [
           "user"
