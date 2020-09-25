@@ -16,9 +16,61 @@
     "/offset": {
       "get": {
         "summary": "Details about co2 ",
-        "operationId": "listUser",
+        "operationId": "estimation",
         "tags": [
           "user"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "description": "ID of the estimation",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Details about a user",
+            "headers": {
+              "x-next": {
+                "description": "A link to the next page of responses",
+                "schema": {
+                  "type": "string"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "unexpected error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Error"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "paths": {
+    "/estimate": {
+      "post": {
+        "summary": "Estimate the ton CO2 for a particular service or product",
+        "operationId": "offset",
+        "tags": [
+          "estimation"
         ],
         "parameters": [
           {
