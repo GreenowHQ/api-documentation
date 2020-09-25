@@ -6,7 +6,9 @@ info:
 servers:
   - url: http://api-dev.greenpush.com/v1
     description: Greenpush platform (development)
-  - url: http://api.example.com
+  - url: http://api-qa.greenpush.com/v1
+    description: Greenpush platform (qa)
+  - url: http://api.example.com/v1
     description: Greenpush platform
 paths:
   /users:
